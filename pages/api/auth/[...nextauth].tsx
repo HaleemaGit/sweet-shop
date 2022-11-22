@@ -19,8 +19,8 @@ export const authOptions: NextAuthOptions = {
       strategy: "jwt",
     },
     pages: {
-      signIn: "'/auth/signin'",
-      // signOut: "/auth/logout",
+      signIn: "/auth/SignIn",
+      signOut: "api//auth/signOut",
       // error: "/auth/error", // Error code passed in query string as ?error=
     },
   providers: [
@@ -35,11 +35,7 @@ export const authOptions: NextAuthOptions = {
 
   secret: process.env.SECRET,
 
-  // pages: {
-  //   signIn: "/",
-  //   signOut: "/",
-  //   error: "/",
-  // },
+
   theme: {
     colorScheme: "light",
   },
@@ -47,27 +43,15 @@ export const authOptions: NextAuthOptions = {
     async signIn({ user, account, profile, email, credentials }) {
       return true;
     },
-    // async redirect({ url, baseUrl }) {
-    //   return url.startsWith(baseUrl) ? url : baseUrl;
-    // },
-    async jwt({ token, user, account, profile, isNewUser }) {
-      if (user) {
-        token.id = user.id;
+    async redirect({ url, baseUrl }) {
+        return baseUrl
+      },
+      async session({ session, user, token }) {
+        return session
+      },
+      async jwt({ token, user, account, profile, isNewUser }) {
+        return token
       }
-
-      return token;
-    },
-    // async session({ session, token, user }) {
-    //   const sess: Session = {
-    //     ...session,
-    //     user: {
-    //       ...session.user,
-    //       id: token.id as string,
-    //     },
-    //   };
-
-    //   return sess;
-    // },
   },
 };
 
