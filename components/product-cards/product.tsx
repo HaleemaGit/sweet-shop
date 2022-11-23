@@ -25,10 +25,10 @@ export const Product = (product: ProductProps) => {
         <p className="text-sm font-medium text-gray-900"></p>
       </div>
       <button className="mt-6 group outline-none relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none">
-        Kup
+        Buy
       </button>
       <button className="mt-4 group outline-none relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black bg-gray-100 hover:bg-gray-300 focus:outline-none">
-        Dodaj do koszyka
+        Add to Cart
       </button>
     </article>
   );

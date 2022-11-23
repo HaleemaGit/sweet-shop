@@ -5,6 +5,8 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { SessionProvider } from 'next-auth/react';
 import 'tailwindcss/tailwind.css';
 import { CartProvider } from '../context/CartProvider';
+import '../styles/globals.css'
+
 
 export default function App({ Component, pageProps, err }: AppProps & { err: Error }) {
   const [queryClient] = useState(() => new QueryClient());

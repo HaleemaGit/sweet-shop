@@ -8,13 +8,24 @@ import SignIn from './auth/SignIn';
 import { useAuth } from '../hooks/useAuth';
 
 
+
 export default function Home() {
+  
   const { session } = useAuth();
   return (
     <div>
     <Layout>
+    {!session && <div className='flex flex-col items-center justify-center'><h1 className="text-5xl font-extrabold tracking-tight text-gray-900 self-center mb-8">
+        WELCOME TO </h1>
+        <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 self-center font-semibold tracking-widest text-amber-500">`GIGGLING SWEET LOUNGE`
+      </h1></div>}
       <SignIn />
-      {session && <><Products /><Checkout /></>
+      {session && <>
+        <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 self-center mb-2">
+        START SHOPPING </h1>
+        <h1 className="text-5xl font-extrabold tracking-tight text-gray-900 self-center font-semibold tracking-widest text-amber-500">`AND GIGGLE TO THE WORLD!`
+      </h1>
+      <Products /><Checkout /></>
     }</Layout>
     </div>
   );

@@ -13,9 +13,10 @@ export default function SignIn() {
       {!session && (
         <button
           onClick={handleSignIn}
-          className="mt-6 group outline-none relative w-28 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+          className="mt-6 group outline-none relative flex justify-center p-4 px-4 w-full text-white transition-colors duration-150 bg-black rounded-lg focus:shadow-outline hover:bg-orange-900"
+
         >
-          Login
+          Tap here to explore our sweetening offerings
         </button>
       )}
     </div>
