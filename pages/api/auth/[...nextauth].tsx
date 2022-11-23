@@ -15,9 +15,9 @@ const prisma = new PrismaClient();
 
 export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
-    session: {
-      strategy: "jwt",
-    },
+    // session: {
+    //   strategy: "jwt",
+    // },
     pages: {
       signIn: "/auth/SignIn",
       signOut: "api//auth/signOut",
