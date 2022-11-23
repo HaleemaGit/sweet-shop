@@ -32,7 +32,7 @@ type FetcherConfig<Schema extends AnySchema | null> = {
 };
 
 
-import { ResponseError } from '../../responseError';
+import { ResponseError } from '../../../utils/responseError';
 
 export async function fetcher<Schema extends null>(
   path: string,
@@ -82,6 +82,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const products = await prisma.product.findMany();
 
   if (products.length) {
+    console.log ("products: ", products)
     res.status(200).json(products);
     res.end();
   } else {

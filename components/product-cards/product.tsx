@@ -16,7 +16,10 @@ export const Product = (product: ProductProps) => {
   return (
     <article className="group relative">
       <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden lg:h-80 lg:aspect-none">
-        <img className="w-full h-full object-center object-cover lg:w-full lg:h-full" alt="" />
+        <img className="w-full h-full object-center object-cover lg:w-full lg:h-full" alt="" src={image}  />
+        <p>{name}</p>
+        <p>{price}</p>
+
       </div>
       <div className="mt-4 flex justify-between">
         <h2 className="text-sm text-gray-700">
